@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShopMax - Online Store</title>
+
+    <!-- ═══════════════════════════════════════════
+         AMAZON AD TAG (beta script, Event Builder allowlisted tag)
+         Single snippet only — the first-added tag is the primary tag used
+         for the Event Builder allowlist check and the rules.json fetch.
+         ═══════════════════════════════════════════ -->
+    <script>
+        !function(w,d,s,t,a){if(w.amzn)return;w.amzn=a=function(){w.amzn.q.push([arguments,(new Date).getTime()])};a.q=[];a.version="0.0";s=d.createElement("script");s.src="https://dgly4i8n5pn3f.cloudfront.net/aat/amzn.js";s.id="amzn-pixel";s.async=true;t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t)}(window,document);
+        amzn("setRegion", "NA");
+        amzn("addTag", "ead7b209-8f99-4bb2-89ad-e7a4d07e9e6b");
+        amzn("trackEvent", "PageView");
+    </script>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         :root {
             --primary: #131921;
             --secondary: #232f3e;
@@ -21,17 +33,13 @@
             --star: #de7921;
             --border: #ddd;
         }
-
         body {
             font-family: 'Arial', sans-serif;
             color: var(--text);
             background: var(--bg);
             line-height: 1.4;
         }
-
-        /* ═══════════════════════════════════════════
-           HEADER & NAVIGATION
-           ═══════════════════════════════════════════ */
+        /* ═══ HEADER & NAVIGATION ═══ */
         .header {
             background: var(--primary);
             padding: 10px 20px;
@@ -42,7 +50,6 @@
             top: 0;
             z-index: 1000;
         }
-
         .logo {
             color: var(--white);
             font-size: 22px;
@@ -52,11 +59,8 @@
             padding: 4px 8px;
             border-radius: 3px;
         }
-
         .logo:hover { border-color: var(--white); }
-
         .logo span { color: var(--accent); }
-
         .search-bar {
             flex: 1;
             display: flex;
@@ -64,7 +68,6 @@
             overflow: hidden;
             height: 40px;
         }
-
         .search-bar select {
             background: #f3f3f3;
             border: none;
@@ -74,7 +77,6 @@
             border-right: 1px solid var(--border);
             cursor: pointer;
         }
-
         .search-bar input {
             flex: 1;
             border: none;
@@ -82,7 +84,6 @@
             font-size: 14px;
             outline: none;
         }
-
         .search-bar button {
             background: var(--accent);
             border: none;
@@ -90,15 +91,12 @@
             cursor: pointer;
             font-size: 18px;
         }
-
         .search-bar button:hover { background: var(--accent-dark); }
-
         .header-nav {
             display: flex;
             gap: 16px;
             align-items: center;
         }
-
         .header-nav a {
             color: var(--white);
             text-decoration: none;
@@ -107,19 +105,15 @@
             border: 1px solid transparent;
             border-radius: 3px;
         }
-
         .header-nav a:hover { border-color: var(--white); }
-
         .header-nav a .nav-label { display: block; font-size: 10px; color: #ccc; }
         .header-nav a .nav-value { font-size: 13px; font-weight: 700; }
-
         .cart-btn {
             position: relative;
             display: flex;
             align-items: center;
             gap: 4px;
         }
-
         .cart-count {
             position: absolute;
             top: -4px;
@@ -131,7 +125,6 @@
             padding: 0 5px;
             border-radius: 8px;
         }
-
         /* Sub-nav */
         .sub-nav {
             background: var(--secondary);
@@ -140,7 +133,6 @@
             gap: 16px;
             overflow-x: auto;
         }
-
         .sub-nav a {
             color: var(--white);
             text-decoration: none;
@@ -149,22 +141,16 @@
             padding: 4px 8px;
             border-radius: 3px;
         }
-
         .sub-nav a:hover { background: rgba(255,255,255,0.1); }
-
-        /* ═══════════════════════════════════════════
-           HERO BANNER
-           ═══════════════════════════════════════════ */
+        /* ═══ HERO BANNER ═══ */
         .hero {
             background: linear-gradient(135deg, #1a3a5c 0%, #2d5a7b 50%, #3d7a9b 100%);
             padding: 40px 20px;
             text-align: center;
             color: var(--white);
         }
-
         .hero h1 { font-size: 28px; margin-bottom: 8px; }
         .hero p { font-size: 16px; color: #cde; margin-bottom: 20px; }
-
         .hero-cta {
             display: inline-block;
             background: var(--accent);
@@ -177,35 +163,26 @@
             border: none;
             cursor: pointer;
         }
-
         .hero-cta:hover { background: var(--accent-dark); }
-
-        /* ═══════════════════════════════════════════
-           MAIN CONTENT
-           ═══════════════════════════════════════════ */
+        /* ═══ MAIN CONTENT ═══ */
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 20px;
         }
-
         .section-title {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 16px;
             color: var(--text);
         }
-
-        /* ═══════════════════════════════════════════
-           PRODUCT GRID
-           ═══════════════════════════════════════════ */
+        /* ═══ PRODUCT GRID ═══ */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
             gap: 16px;
             margin-bottom: 40px;
         }
-
         .product-card {
             background: var(--white);
             border-radius: 8px;
@@ -215,9 +192,7 @@
             display: flex;
             flex-direction: column;
         }
-
         .product-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-
         .product-image {
             width: 100%;
             height: 200px;
@@ -229,7 +204,6 @@
             margin-bottom: 12px;
             font-size: 48px;
         }
-
         .product-title {
             font-size: 14px;
             color: var(--link);
@@ -237,43 +211,34 @@
             cursor: pointer;
             line-height: 1.3;
         }
-
         .product-title:hover { color: var(--accent-dark); text-decoration: underline; }
-
         .product-rating {
             display: flex;
             align-items: center;
             gap: 4px;
             margin-bottom: 6px;
         }
-
         .stars { color: var(--star); font-size: 14px; }
         .rating-count { font-size: 12px; color: var(--link); }
-
         .product-price {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 4px;
         }
-
         .product-price .currency { font-size: 12px; vertical-align: super; }
         .product-price .cents { font-size: 12px; vertical-align: super; }
-
         .product-original-price {
             font-size: 12px;
             color: var(--text-light);
             text-decoration: line-through;
             margin-bottom: 8px;
         }
-
         .product-delivery {
             font-size: 12px;
             color: var(--text-light);
             margin-bottom: 12px;
         }
-
         .product-delivery strong { color: var(--text); }
-
         .btn-add-to-cart {
             background: var(--accent);
             border: 1px solid #c89411;
@@ -285,9 +250,7 @@
             width: 100%;
             margin-top: auto;
         }
-
         .btn-add-to-cart:hover { background: var(--accent-dark); }
-
         .btn-buy-now {
             background: #ffa41c;
             border: 1px solid #ff8f00;
@@ -299,12 +262,8 @@
             width: 100%;
             margin-top: 8px;
         }
-
         .btn-buy-now:hover { background: #e89b1c; }
-
-        /* ═══════════════════════════════════════════
-           DEALS SECTION
-           ═══════════════════════════════════════════ */
+        /* ═══ DEALS SECTION ═══ */
         .deals-banner {
             background: var(--white);
             border-radius: 8px;
@@ -312,26 +271,22 @@
             padding: 20px;
             margin-bottom: 40px;
         }
-
         .deals-banner h2 {
             color: #cc0c39;
             font-size: 18px;
             margin-bottom: 12px;
         }
-
         .deals-row {
             display: flex;
             gap: 16px;
             overflow-x: auto;
             padding-bottom: 8px;
         }
-
         .deal-item {
             min-width: 180px;
             text-align: center;
             cursor: pointer;
         }
-
         .deal-badge {
             background: #cc0c39;
             color: white;
@@ -342,7 +297,6 @@
             display: inline-block;
             margin-bottom: 8px;
         }
-
         .deal-image {
             width: 140px;
             height: 140px;
@@ -354,12 +308,8 @@
             justify-content: center;
             font-size: 36px;
         }
-
         .deal-price { font-weight: 700; font-size: 14px; }
-
-        /* ═══════════════════════════════════════════
-           NEWSLETTER / SUBSCRIBE
-           ═══════════════════════════════════════════ */
+        /* ═══ NEWSLETTER / SUBSCRIBE ═══ */
         .subscribe-section {
             background: var(--secondary);
             padding: 30px 20px;
@@ -367,17 +317,14 @@
             margin-bottom: 40px;
             border-radius: 8px;
         }
-
         .subscribe-section h3 { color: var(--white); margin-bottom: 8px; font-size: 18px; }
         .subscribe-section p { color: #ccc; font-size: 13px; margin-bottom: 16px; }
-
         .subscribe-form {
             display: flex;
             max-width: 400px;
             margin: 0 auto;
             gap: 8px;
         }
-
         .subscribe-form input {
             flex: 1;
             padding: 10px 14px;
@@ -385,7 +332,6 @@
             border-radius: 4px;
             font-size: 13px;
         }
-
         .subscribe-form button {
             background: var(--accent);
             border: none;
@@ -395,12 +341,8 @@
             font-size: 13px;
             cursor: pointer;
         }
-
         .subscribe-form button:hover { background: var(--accent-dark); }
-
-        /* ═══════════════════════════════════════════
-           LEAD / CONTACT FORM
-           ═══════════════════════════════════════════ */
+        /* ═══ LEAD / CONTACT FORM ═══ */
         .contact-section {
             background: var(--white);
             border-radius: 8px;
@@ -409,18 +351,14 @@
             margin-bottom: 40px;
             max-width: 500px;
         }
-
         .contact-section h3 { margin-bottom: 16px; font-size: 16px; }
-
         .form-group { margin-bottom: 12px; }
-
         .form-group label {
             display: block;
             font-size: 13px;
             font-weight: 600;
             margin-bottom: 4px;
         }
-
         .form-group input,
         .form-group textarea {
             width: 100%;
@@ -430,10 +368,8 @@
             font-size: 13px;
             outline: none;
         }
-
         .form-group input:focus,
         .form-group textarea:focus { border-color: var(--link); box-shadow: 0 0 0 2px rgba(0,113,133,0.1); }
-
         .btn-submit {
             background: var(--accent);
             border: 1px solid #c89411;
@@ -444,12 +380,8 @@
             cursor: pointer;
             width: 100%;
         }
-
         .btn-submit:hover { background: var(--accent-dark); }
-
-        /* ═══════════════════════════════════════════
-           CART / CHECKOUT SECTION
-           ═══════════════════════════════════════════ */
+        /* ═══ CART / CHECKOUT SECTION ═══ */
         .cart-section {
             background: var(--white);
             border-radius: 8px;
@@ -457,9 +389,7 @@
             padding: 24px;
             margin-bottom: 40px;
         }
-
         .cart-section h3 { margin-bottom: 16px; font-size: 16px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-
         .cart-item {
             display: flex;
             align-items: center;
@@ -467,7 +397,6 @@
             padding: 12px 0;
             border-bottom: 1px solid #f0f0f0;
         }
-
         .cart-item-image {
             width: 80px;
             height: 80px;
@@ -478,12 +407,10 @@
             justify-content: center;
             font-size: 28px;
         }
-
         .cart-item-details { flex: 1; }
         .cart-item-title { font-size: 14px; color: var(--link); margin-bottom: 4px; }
         .cart-item-price { font-weight: 700; font-size: 16px; }
         .cart-item-qty { font-size: 12px; color: var(--text-light); margin-top: 4px; }
-
         .cart-item-remove {
             background: none;
             border: none;
@@ -492,9 +419,7 @@
             cursor: pointer;
             padding: 4px;
         }
-
         .cart-item-remove:hover { text-decoration: underline; color: #cc0c39; }
-
         .cart-summary {
             margin-top: 16px;
             padding-top: 16px;
@@ -503,9 +428,7 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .cart-total { font-size: 18px; font-weight: 700; }
-
         .btn-checkout {
             background: var(--accent);
             border: 1px solid #c89411;
@@ -515,9 +438,7 @@
             font-weight: 700;
             cursor: pointer;
         }
-
         .btn-checkout:hover { background: var(--accent-dark); }
-
         .btn-purchase {
             background: #ffd814;
             border: 1px solid #fcd200;
@@ -529,12 +450,8 @@
             width: 100%;
             margin-top: 12px;
         }
-
         .btn-purchase:hover { background: #f7ca00; }
-
-        /* ═══════════════════════════════════════════
-           SIGN UP SECTION
-           ═══════════════════════════════════════════ */
+        /* ═══ SIGN UP SECTION ═══ */
         .signup-section {
             background: var(--white);
             border-radius: 8px;
@@ -544,10 +461,8 @@
             max-width: 380px;
             text-align: center;
         }
-
         .signup-section h3 { margin-bottom: 4px; font-size: 22px; }
         .signup-section .subtitle { color: var(--text-light); font-size: 13px; margin-bottom: 20px; }
-
         .btn-signup {
             background: var(--accent);
             border: 1px solid #c89411;
@@ -559,16 +474,13 @@
             width: 100%;
             margin-top: 12px;
         }
-
         .btn-signup:hover { background: var(--accent-dark); }
-
         .signup-divider {
             margin: 16px 0;
             text-align: center;
             color: var(--text-light);
             font-size: 12px;
         }
-
         .btn-signin {
             background: #e7e9ec;
             border: 1px solid #adb1b8;
@@ -578,37 +490,26 @@
             cursor: pointer;
             width: 100%;
         }
-
         .btn-signin:hover { background: #dfe3e8; }
-
-        /* ═══════════════════════════════════════════
-           FOOTER
-           ═══════════════════════════════════════════ */
+        /* ═══ FOOTER ═══ */
         .footer {
             background: var(--secondary);
             padding: 30px 20px;
             text-align: center;
         }
-
         .footer-links { margin-bottom: 16px; }
-
         .footer-links a {
             color: #ddd;
             text-decoration: none;
             font-size: 13px;
             margin: 0 12px;
         }
-
         .footer-links a:hover { text-decoration: underline; }
-
         .footer-copyright {
             color: #999;
             font-size: 11px;
         }
-
-        /* ═══════════════════════════════════════════
-           NOTIFICATIONS
-           ═══════════════════════════════════════════ */
+        /* ═══ NOTIFICATIONS ═══ */
         .notification {
             position: fixed;
             bottom: 20px;
@@ -623,17 +524,12 @@
             display: none;
             animation: slideIn 0.3s ease;
         }
-
         @keyframes slideIn {
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-
         .notification.show { display: block; }
-
-        /* ═══════════════════════════════════════════
-           PRODUCT DETAIL MODAL
-           ═══════════════════════════════════════════ */
+        /* ═══ PRODUCT DETAIL MODAL ═══ */
         .modal-overlay {
             position: fixed;
             top: 0; left: 0; right: 0; bottom: 0;
@@ -643,9 +539,7 @@
             justify-content: center;
             z-index: 9998;
         }
-
         .modal-overlay.show { display: flex; }
-
         .modal-content {
             background: var(--white);
             border-radius: 8px;
@@ -655,7 +549,6 @@
             max-height: 80vh;
             overflow-y: auto;
         }
-
         .modal-close {
             float: right;
             background: none;
@@ -667,13 +560,9 @@
     </style>
 </head>
 <body>
-
-    <!-- ═══════════════════════════════════════════
-         HEADER
-         ═══════════════════════════════════════════ -->
+    <!-- ═══ HEADER ═══ -->
     <header class="header">
         <a href="#" class="logo">Shop<span>Max</span></a>
-
         <div class="search-bar">
             <select id="search-category">
                 <option>All Categories</option>
@@ -686,7 +575,6 @@
             <input type="text" id="search-input" placeholder="Search ShopMax" />
             <button id="search-btn">🔍</button>
         </div>
-
         <div class="header-nav">
             <a href="#signup-section">
                 <span class="nav-label">Hello, Sign in</span>
@@ -715,9 +603,7 @@
         <a href="#contact-section">Customer Service</a>
     </nav>
 
-    <!-- ═══════════════════════════════════════════
-         HERO BANNER
-         ═══════════════════════════════════════════ -->
+    <!-- ═══ HERO BANNER ═══ -->
     <section class="hero">
         <h1>Summer Sale — Up to 60% Off</h1>
         <p>Shop the best deals on electronics, fashion, and more</p>
@@ -725,18 +611,13 @@
     </section>
 
     <div class="container">
-
-        <!-- ═══════════════════════════════════════════
-             PRODUCTS
-             ═══════════════════════════════════════════ -->
+        <!-- ═══ PRODUCTS ═══ -->
         <h2 class="section-title">Featured Products</h2>
         <div class="product-grid" id="product-grid">
             <!-- Products injected by JS -->
         </div>
 
-        <!-- ═══════════════════════════════════════════
-             DEALS
-             ═══════════════════════════════════════════ -->
+        <!-- ═══ DEALS ═══ -->
         <div class="deals-banner">
             <h2>⚡ Lightning Deals</h2>
             <div class="deals-row">
@@ -768,9 +649,7 @@
             </div>
         </div>
 
-        <!-- ═══════════════════════════════════════════
-             SUBSCRIBE / NEWSLETTER
-             ═══════════════════════════════════════════ -->
+        <!-- ═══ SUBSCRIBE / NEWSLETTER ═══ -->
         <div class="subscribe-section">
             <h3>📬 Never Miss a Deal</h3>
             <p>Subscribe to our newsletter and get exclusive offers delivered to your inbox</p>
@@ -780,9 +659,7 @@
             </form>
         </div>
 
-        <!-- ═══════════════════════════════════════════
-             CART
-             ═══════════════════════════════════════════ -->
+        <!-- ═══ CART ═══ -->
         <div class="cart-section" id="cart-section">
             <h3>🛒 Shopping Cart</h3>
             <div id="cart-items">
@@ -812,9 +689,7 @@
             <button class="btn-purchase" id="purchase-btn">🔒 Place Your Order</button>
         </div>
 
-        <!-- ═══════════════════════════════════════════
-             SIGN UP
-             ═══════════════════════════════════════════ -->
+        <!-- ═══ SIGN UP ═══ -->
         <div class="signup-section" id="signup-section">
             <h3>Create Account</h3>
             <p class="subtitle">New to ShopMax?</p>
@@ -832,9 +707,7 @@
             <button class="btn-signin" id="signin-btn">Sign in</button>
         </div>
 
-        <!-- ═══════════════════════════════════════════
-             CONTACT / LEAD FORM
-             ═══════════════════════════════════════════ -->
+        <!-- ═══ CONTACT / LEAD FORM ═══ -->
         <div class="contact-section" id="contact-section">
             <h3>📞 Contact Us</h3>
             <form id="contact-form">
@@ -857,12 +730,9 @@
                 <button type="submit" class="btn-submit" id="contact-submit-btn">Submit Inquiry</button>
             </form>
         </div>
-
     </div>
 
-    <!-- ═══════════════════════════════════════════
-         FOOTER
-         ═══════════════════════════════════════════ -->
+    <!-- ═══ FOOTER ═══ -->
     <footer class="footer">
         <div class="footer-links">
             <a href="#">About Us</a>
@@ -885,9 +755,7 @@
         <div class="modal-content" id="modal-content"></div>
     </div>
 
-    <!-- ═══════════════════════════════════════════
-         JAVASCRIPT
-         ═══════════════════════════════════════════ -->
+    <!-- ═══ JAVASCRIPT ═══ -->
     <script>
         // ─── PRODUCT DATA ───
         const products = [
@@ -926,12 +794,27 @@
             grid.appendChild(card);
         });
 
-        // ─── CART LOGIC ───
+        // ─── CLIENT DEDUPE ID HELPER ───
+        // Generates a unique id per action. crypto.randomUUID needs a secure
+        // context (https/localhost); fall back to a timestamp-based id elsewhere.
+        function newEventId(prefix) {
+            const uuid = (window.crypto && crypto.randomUUID)
+                ? crypto.randomUUID()
+                : Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 10);
+            return prefix + '-' + uuid;
+        }
+
+        // ─── CART LOGIC (single handler: dataLayer push FIRST, then UI) ───
         let cartCount = 2;
         document.getElementById('cart-count').textContent = cartCount;
-
         document.querySelectorAll('.btn-add-to-cart').forEach(btn => {
             btn.addEventListener('click', (e) => {
+                // ① Fresh per-click id — the ClientDedupeId value. Pushed BEFORE
+                //    anything else so it's available when the AAT rule fires.
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({ event: 'add_to_cart', event_id: newEventId('atc') });
+
+                // ② Normal page behavior
                 cartCount++;
                 document.getElementById('cart-count').textContent = cartCount;
                 const name = e.target.getAttribute('data-product-name');
@@ -939,21 +822,12 @@
             });
         });
 
-        document.querySelectorAll('.btn-add-to-cart').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        // Fresh per-click id — the ClientDedupeId value
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ event: 'add_to_cart', event_id: 'atc-' + crypto.randomUUID() });
-
-        cartCount++;
-        document.getElementById('cart-count').textContent = cartCount;
-        showNotification(`✅ Added "${e.target.getAttribute('data-product-name')}" to cart`);
-    });
-});
-
-
         document.querySelectorAll('.btn-buy-now').forEach(btn => {
             btn.addEventListener('click', (e) => {
+                // Same pattern for purchases: unique id per purchase action.
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({ event: 'purchase', event_id: newEventId('order') });
+
                 const name = e.target.getAttribute('data-product-name');
                 const price = e.target.getAttribute('data-price');
                 showNotification(`🔒 Processing purchase: "${name}" — $${price}`);
@@ -967,7 +841,6 @@
                 showNotification(`🔍 Searching for: "${query}"`);
             }
         });
-
         document.getElementById('search-input').addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 document.getElementById('search-btn').click();
@@ -978,8 +851,9 @@
         document.getElementById('checkout-btn').addEventListener('click', () => {
             showNotification('💳 Proceeding to checkout...');
         });
-
         document.getElementById('purchase-btn').addEventListener('click', () => {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({ event: 'purchase', event_id: newEventId('order') });
             showNotification('✅ Order placed successfully! Thank you for your purchase.');
         });
 
@@ -1001,7 +875,6 @@
                 showNotification('⚠️ Please fill in all fields');
             }
         });
-
         document.getElementById('signin-btn').addEventListener('click', () => {
             showNotification('🔑 Redirecting to sign in...');
         });
@@ -1053,76 +926,5 @@
             setTimeout(() => el.classList.remove('show'), 3000);
         }
     </script>
-    <!-- TikTok Pixel Code Start -->
-<!-- <script>
-!function (w, d, t) {
-  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(
-var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script")
-;n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
-
-
-  ttq.load('D7GNRCBC77U2ODPGL220');
-  ttq.page();
-}(window, document, 'ttq');
-    
-</script> -->
-
-<!-- Add this script before the </head> on the page you where website actions can occur. This script captures events when the page loads. -->
-<!-- <script>
-    !function(w,d,s,t,a){if(w.amzn)return;w.amzn=a=function(){w.amzn.q.push([arguments,(new Date).getTime()])};a.q=[];a.version="0.0";s=d.createElement("script");s.src="https://d1leee6d0c4cew.cloudfront.net/aat/amzn-test.js";s.id="amzn-pixel";s.async=true;t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t)}(window,document);
-    amzn("setRegion", "NA");
-    amzn("addTag", "ead7b209-8f99-4bb2-89ad-e7a4d07e9e6b");
-    amzn("trackEvent", "PageView");
-</script> -->
-
-    <!-- Add this script before the </head> on the page you where website actions can occur. This script captures events when the page loads. -->
-<script>
-    !function(w,d,s,t,a){if(w.amzn)return;w.amzn=a=function(){w.amzn.q.push([arguments,(new Date).getTime()])};a.q=[];a.version="0.0";s=d.createElement("script");s.src="https://c.amazon-adsystem.com/aat/amzn.js";s.id="amzn-pixel";s.async=true;t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t)}(window,document);
-    amzn("setRegion", "NA");
-    amzn("addTag", "a8318e5a-59b8-48d4-8a6a-efe506b2863c");
-    amzn("trackEvent", "PageView");
-</script>
-
-<script>
-    !function(w,d,s,t,a){if(w.amzn)return;w.amzn=a=function(){w.amzn.q.push([arguments,(new Date).getTime()])};a.q=[];a.version="0.0";s=d.createElement("script");s.src="https://c.amazon-adsystem.com/aat/amzn.js";s.id="amzn-pixel";s.async=true;t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t)}(window,document);
-    amzn("setRegion", "NA");
-    amzn("addTag", "d1a7a168-dd21-4082-a848-5264a17c7a7c");
-    amzn("trackEvent", "PageView");
-</script>
-
-    <!-- Add this script before the </head> on the page you where website actions can occur. This script captures events when the page loads. -->
-<script>
-    !function(w,d,s,t,a){if(w.amzn)return;w.amzn=a=function(){w.amzn.q.push([arguments,(new Date).getTime()])};a.q=[];a.version="0.0";s=d.createElement("script");s.src="https://d1leee6d0c4cew.cloudfront.net/aat/amzn-test.js";s.id="amzn-pixel";s.async=true;t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t)}(window,document);
-    amzn("setRegion", "NA");
-    amzn("addTag", "ead7b209-8f99-4bb2-89ad-e7a4d07e9e6b");
-    amzn("trackEvent", "PageView");
-</script>
-
-<!-- Add this script before the </head> on the page you where website actions can occur. This script captures events when the page loads. -->
-<script>
-    !function(w,d,s,t,a){if(w.amzn)return;w.amzn=a=function(){w.amzn.q.push([arguments,(new Date).getTime()])};a.q=[];a.version="0.0";s=d.createElement("script");s.src="https://c.amazon-adsystem.com/aat/amzn.js";s.id="amzn-pixel";s.async=true;t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t)}(window,document);
-    amzn("setRegion", "NA");
-    amzn("addTag", "48b562e0-7f91-49e4-9673-606705b2c96b");
-    amzn("trackEvent", "PageView");
-</script>
-
-    <!-- Add this script before the </head> on the page you where website actions can occur. This script captures events when the page loads. -->
-<script>
-    !function(w,d,s,t,a){if(w.amzn)return;w.amzn=a=function(){w.amzn.q.push([arguments,(new Date).getTime()])};a.q=[];a.version="0.0";s=d.createElement("script");s.src="https://c.amazon-adsystem.com/aat/amzn.js";s.id="amzn-pixel";s.async=true;t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t)}(window,document);
-    amzn("setRegion", "NA");
-    amzn("addTag", "206a8e66-347e-463c-b3bf-6c6c7eb32ec7");
-    amzn("trackEvent", "PageView");
-</script>
-
-    <!-- Add this script before the </head> on the page you where website actions can occur. This script captures events when the page loads. -->
-<!-- Add this script before the </head> on the page you where website actions can occur. This script captures events when the page loads. -->
-<script>
-    !function(w,d,s,t,a){if(w.amzn)return;w.amzn=a=function(){w.amzn.q.push([arguments,(new Date).getTime()])};a.q=[];a.version="0.0";s=d.createElement("script");s.src="https://c.amazon-adsystem.com/aat/amzn.js";s.id="amzn-pixel";s.async=true;t=d.getElementsByTagName("script")[0];t.parentNode.insertBefore(s,t)}(window,document);
-    amzn("setRegion", "NA");
-    amzn("addTag", "69088d28-554d-463a-8ccf-3e2b705299b0");
-    amzn("trackEvent", "PageView");
-</script>
-    
-<!-- TikTok Pixel Code End -->
 </body>
 </html>
