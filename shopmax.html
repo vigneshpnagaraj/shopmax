@@ -939,6 +939,19 @@
             });
         });
 
+        document.querySelectorAll('.btn-add-to-cart').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        // Fresh per-click id — the ClientDedupeId value
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ event: 'add_to_cart', event_id: 'atc-' + crypto.randomUUID() });
+
+        cartCount++;
+        document.getElementById('cart-count').textContent = cartCount;
+        showNotification(`✅ Added "${e.target.getAttribute('data-product-name')}" to cart`);
+    });
+});
+
+
         document.querySelectorAll('.btn-buy-now').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 const name = e.target.getAttribute('data-product-name');
